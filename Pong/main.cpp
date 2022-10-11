@@ -67,6 +67,11 @@ int main(){
                 if (event.type == sf::Event::Closed)
                     window.close();
             }
+            if(Keyboard::isKeyPressed(Keyboard::Return)){
+                scores[0] = 0; scores[1] = 0;
+                shape.setPosition(width/4+(rand()%width/2), height/4+(rand()%height/2));
+                continue;
+            }
             float circleX = shape.getPosition().x, circleY = shape.getPosition().y;
             float paddle1X = paddles[0].getPosition().x, paddle1Y = paddles[0].getPosition().y;
                 if(Keyboard::isKeyPressed(Keyboard::W)&&paddle1Y-paddleLength/2>=0){
@@ -102,7 +107,7 @@ int main(){
                 //Hits Right side
                 
                 s1<<++scores[0];
-                scoreTexts[0].setString(s1.str());
+                
                 xSpeed*=-1;
                 shape.setPosition(width/4+(rand()%width/2), height/4+(rand()%height/2));
                 circleX = shape.getPosition().x;circleY = shape.getPosition().y;
@@ -111,14 +116,18 @@ int main(){
                 //Hits left side
                 
                 s2<<++scores[1];
-                scoreTexts[1].setString(s2.str());
+                
                 xSpeed*=-1;
                 shape.setPosition(width/4+(rand()%width/2), height/4+(rand()%height/2));
                 circleX = shape.getPosition().x;circleY = shape.getPosition().y;
                 sleep(1);
+            }else{
+                s1<<scores[0];
+                s2<<scores[1];
             }
             
-            
+            scoreTexts[1].setString(s2.str());
+            scoreTexts[0].setString(s1.str());
             
             if(circleY+circleRadius>=height||circleY-circleRadius<=0){
                 ySpeed*=-1;
