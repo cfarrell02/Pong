@@ -97,7 +97,7 @@
 				50DC982528F4E23700C69001 /* Sources */,
 				50DC982628F4E23700C69001 /* Frameworks */,
 				50DC982728F4E23700C69001 /* Resources */,
-				50DC982828F4E23700C69001 /* ShellScript */,
+				50DC982828F4E23700C69001 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -156,7 +156,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		50DC982828F4E23700C69001 /* ShellScript */ = {
+		50DC982828F4E23700C69001 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
@@ -165,6 +165,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
